@@ -40,7 +40,7 @@ class SpyableMarkdownTocWrapper extends Component {
   }
 
   handleWindowScroll() {
-    const baseTop = window.pageYOffset;
+    const baseTop = window.pageYOffset + 30;
     const targets = [];
 
     Array.prototype.forEach.call(this.$scrollItems, (elm, i) => {
@@ -51,6 +51,10 @@ class SpyableMarkdownTocWrapper extends Component {
     this.setState({ currentIndex });
   }
 
+  handleTocItemClick(index) {
+    const $target = this.$scrollItems[index];
+    $target.scrollIntoView();
+  }
 
   render() {
     return (
