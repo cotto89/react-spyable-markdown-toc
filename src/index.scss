@@ -1,0 +1,44 @@
+.SpyableMarkdownTocWrapper {
+  display: flex;
+}
+
+.SpyableMarkdownPreview {
+  max-width: 50vw;
+}
+
+.SpyableToc {
+  position: fixed;
+}
+
+.SpyableTocItem {
+  box-sizing: border-box;
+  padding: 10px;
+  min-width: 0;
+  max-width: 100px;
+  cursor: pointer;
+
+  &:hover {
+    color: deepskyblue;
+  }
+}
+
+.SpyableTocItem__depth-2 {
+  margin-left: 20px;
+}
+.SpyableTocItem__depth-3 {
+  margin-left: 40px;
+}
+.SpyableTocItem__depth-4 {
+  margin-left: 80px;
+}
+.SpyableTocItem__depth-5 {
+  margin-left: 100px;
+}
+.SpyableTocItem__depth-6 {
+  margin-left: 120px;
+}
+
+.SpyableTocItem--current {
+  background: #ccc;
+  color: #fff;
+}
