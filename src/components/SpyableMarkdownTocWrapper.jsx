@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Parser from './../md-parser.js';
+import Parser from './../lib/md-parser.js';
 
 class SpyableMarkdownTocWrapper extends Component {
   static get propTypes() {

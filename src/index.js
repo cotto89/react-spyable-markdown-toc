@@ -1,9 +1,9 @@
 require('./index.scss');
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Wrapper = require('./lib/components/SpyableMarkdownTocWrapper.jsx').default;
-const Preview = require('./lib/components/SpyableMarkdownPreview.jsx').default;
-const Toc = require('./lib/components/SpyableToc.jsx').default;
+const Wrapper = require('./components/SpyableMarkdownTocWrapper.jsx').default;
+const Preview = require('./components/SpyableMarkdownPreview.jsx').default;
+const Toc = require('./components/SpyableToc.jsx').default;
 const SampleText = require('./../debug/SampleText.md');
 
 const App = function App() {
