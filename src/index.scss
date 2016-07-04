@@ -11,8 +11,11 @@
 }
 
 .SpyableTocItem {
-  cursor: pointer;
+  box-sizing: border-box;
   padding: 10px;
+  min-width: 0;
+  max-width: 100px;
+  cursor: pointer;
 
   &:hover {
     color: deepskyblue;
