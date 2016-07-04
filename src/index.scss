@@ -10,7 +10,7 @@
   position: fixed;
 }
 
-.TocItem {
+.SpyableTocItem {
   cursor: pointer;
   padding: 10px;
 
@@ -19,23 +19,23 @@
   }
 }
 
-.TocItemDepth-2 {
+.SpyableTocItem__depth-2 {
   margin-left: 30px;
 }
-.TocItemDepth-3 {
+.SpyableTocItem__depth-3 {
   margin-left: 60px;
 }
-.TocItemDepth-4 {
+.SpyableTocItem__depth-4 {
   margin-left: 90px;
 }
-.TocItemDepth-5 {
+.SpyableTocItem__depth-5 {
   margin-left: 120px;
 }
-.TocItemDepth-6 {
+.SpyableTocItem__depth-6 {
   margin-left: 150px;
 }
 
-.TocItem--current {
+.SpyableTocItem--current {
   background: #ccc;
   color: #fff;
 }
