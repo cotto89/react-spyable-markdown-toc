@@ -26,14 +26,15 @@ class SpyableMarkdownTocWrapper extends Component {
 
     /* parser */
     const { raw, parseOption, maxDepth } = this.props;
-    const headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
-    this.parser = new Parser({ raw, parseOption, headingAttributes });
+    this.initParser({ raw, parseOption, maxDepth });
 
     /* handler */
     this.handleTocItemClick = this.handleTocItemClick.bind(this);
     this.handleWindowScroll = this.handleWindowScroll.bind(this);
   }
 
+  /* context
+  ----------------------------------- */
   getChildContext() {
     return {
       html: this.parser.toHTML(),
@@ -43,14 +44,15 @@ class SpyableMarkdownTocWrapper extends Component {
     };
   }
 
+  /* Lifecycle
+  ------------------------------------ */
   componentDidMount() {
     this.$scrollItems = document.querySelectorAll('[data-spyable-heading=true]');
     window.addEventListener('scroll', this.handleWindowScroll);
   }
 
   componentWillReceiveProps({ raw, parseOption, maxDepth }) {
-    const headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
-    this.parser = new Parser({ raw, parseOption, headingAttributes });
+    this.initParser({ raw, parseOption, maxDepth });
     this.setState({ currentIndex: 0 });
   }
 
@@ -64,6 +66,15 @@ class SpyableMarkdownTocWrapper extends Component {
     window.removeEventListener('scroll', this.handleWindowScroll);
   }
 
+  /* methods
+  --------------------------------------*/
+  initParser({ raw, parseOption, maxDepth }) {
+    const headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
+    this.parser = new Parser({ raw, parseOption, headingAttributes });
+  }
+
+  /* handler
+  ------------------------------------------*/
   handleWindowScroll() {
     const baseTop = window.pageYOffset + 30;
     const targets = [];
@@ -80,6 +91,7 @@ class SpyableMarkdownTocWrapper extends Component {
     const $target = this.$scrollItems[index];
     $target.scrollIntoView();
   }
+
 
   render() {
     return (
