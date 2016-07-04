@@ -1,0 +1,41 @@
+.SpyableMarkdownTocWrapper {
+  display: flex;
+}
+
+.SpyableMarkdownPreview {
+  max-width: 50vw;
+}
+
+.SpyableToc {
+  position: fixed;
+}
+
+.TocItem {
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    color: deepskyblue;
+  }
+}
+
+.TocItemDepth-2 {
+  margin-left: 30px;
+}
+.TocItemDepth-3 {
+  margin-left: 60px;
+}
+.TocItemDepth-4 {
+  margin-left: 90px;
+}
+.TocItemDepth-5 {
+  margin-left: 120px;
+}
+.TocItemDepth-6 {
+  margin-left: 150px;
+}
+
+.TocItem--current {
+  background: #ccc;
+  color: #fff;
+}
