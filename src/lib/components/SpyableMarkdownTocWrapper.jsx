@@ -23,6 +23,7 @@ class SpyableMarkdownTocWrapper extends Component {
     this.state = { currentIndex: 0 };
     this.parser = new Parser(this.props.raw);
     this.handleTocItemClick = this.handleTocItemClick.bind(this);
+    this.handleWindowScroll = this.handleWindowScroll.bind(this);
   }
 
   getChildContext() {
@@ -36,8 +37,24 @@ class SpyableMarkdownTocWrapper extends Component {
 
   componentDidMount() {
     this.$scrollItems = document.querySelectorAll('[data-spyable-heading=true]');
-    window.addEventListener('scroll', this.handleWindowScroll.bind(this));
+    window.addEventListener('scroll', this.handleWindowScroll);
   }
+
+  componentWillReceiveProps({ raw }) {
+    this.parser = new Parser(raw);
+    this.setState({ currentIndex: 0 });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.raw !== this.props.raw) {
+      this.$scrollItems = document.querySelectorAll('[data-spyable-heading=true]');
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleWindowScroll);
+  }
+
 
   handleWindowScroll() {
     const baseTop = window.pageYOffset + 30;
