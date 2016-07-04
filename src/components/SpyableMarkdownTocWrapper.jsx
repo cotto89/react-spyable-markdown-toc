@@ -6,6 +6,7 @@ class SpyableMarkdownTocWrapper extends Component {
     return {
       raw: PropTypes.string.isRequired,
       children: PropTypes.node.isRequired,
+      parseOption: PropTypes.object,
     };
   }
 
@@ -20,8 +21,9 @@ class SpyableMarkdownTocWrapper extends Component {
 
   constructor(props) {
     super(props);
+    const { raw, parseOption } = this.props;
     this.state = { currentIndex: 0 };
-    this.parser = new Parser(this.props.raw);
+    this.parser = new Parser(raw, parseOption, { 'data-spyable-heading': true });
     this.handleTocItemClick = this.handleTocItemClick.bind(this);
     this.handleWindowScroll = this.handleWindowScroll.bind(this);
   }
@@ -40,8 +42,8 @@ class SpyableMarkdownTocWrapper extends Component {
     window.addEventListener('scroll', this.handleWindowScroll);
   }
 
-  componentWillReceiveProps({ raw }) {
-    this.parser = new Parser(raw);
+  componentWillReceiveProps({ raw, parseOption, headingAttrs }) {
+    this.parser = new Parser(raw, parseOption, headingAttrs);
     this.setState({ currentIndex: 0 });
   }
 

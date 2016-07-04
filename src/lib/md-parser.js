@@ -15,7 +15,7 @@ class MDParser {
   constructor(raw, parseOption, headingAttributes) {
     this.raw = raw;
     this.parseOption = parseOption || { breaks: true, setext: true };
-    this.headingAttributes = headingAttributes || { attrs: { 'data-spyable-heading': true } };
+    this.headingAttributes = { attrs: headingAttributes };
   }
 
   /**
