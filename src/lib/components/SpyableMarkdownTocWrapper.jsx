@@ -14,11 +14,13 @@ class SpyableMarkdownTocWrapper extends Component {
       html: PropTypes.string,
       headingList: PropTypes.array,
       onTocItemClick: PropTypes.func,
+      currentIndex: PropTypes.number,
     };
   }
 
   constructor(props) {
     super(props);
+    this.state = { currentIndex: 0 };
     this.parser = new Parser(this.props.raw);
     this.handleTocItemClick = this.handleTocItemClick.bind(this);
   }
@@ -27,16 +29,26 @@ class SpyableMarkdownTocWrapper extends Component {
     return {
       html: this.parser.toHTML(),
       headingList: this.parser.headingList,
+      currentIndex: this.state.currentIndex,
       onTocItemClick: this.handleTocItemClick,
     };
   }
 
   componentDidMount() {
-    const $headings = document.querySelectorAll('[data-spyable-heading=true]');
+    this.$scrollItems = document.querySelectorAll('[data-spyable-heading=true]');
+    window.addEventListener('scroll', this.handleWindowScroll.bind(this));
   }
 
-  handleTocItemClick(index, ev) {
-    console.log(index, ev);
+  handleWindowScroll() {
+    const baseTop = window.pageYOffset;
+    const targets = [];
+
+    Array.prototype.forEach.call(this.$scrollItems, (elm, i) => {
+      if (baseTop > elm.offsetTop) targets.push(i);
+    });
+
+    const currentIndex = targets[targets.length - 1] || 0;
+    this.setState({ currentIndex });
   }
 
 
