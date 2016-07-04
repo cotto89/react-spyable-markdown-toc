@@ -13,23 +13,30 @@ class SpyableMarkdownTocWrapper extends Component {
     return {
       html: PropTypes.string,
       headingList: PropTypes.array,
+      onTocItemClick: PropTypes.func,
     };
   }
 
   constructor(props) {
     super(props);
     this.parser = new Parser(this.props.raw);
+    this.handleTocItemClick = this.handleTocItemClick.bind(this);
   }
 
   getChildContext() {
     return {
       html: this.parser.toHTML(),
       headingList: this.parser.headingList,
+      onTocItemClick: this.handleTocItemClick,
     };
   }
 
   componentDidMount() {
     const $headings = document.querySelectorAll('[data-spyable-heading=true]');
+  }
+
+  handleTocItemClick(index, ev) {
+    console.log(index, ev);
   }
 
 
