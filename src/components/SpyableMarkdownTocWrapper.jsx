@@ -7,6 +7,7 @@ class SpyableMarkdownTocWrapper extends Component {
       raw: PropTypes.string.isRequired,
       children: PropTypes.node.isRequired,
       parseOption: PropTypes.object,
+      maxDepth: PropTypes.number,
     };
   }
 
@@ -21,9 +22,14 @@ class SpyableMarkdownTocWrapper extends Component {
 
   constructor(props) {
     super(props);
-    const { raw, parseOption } = this.props;
     this.state = { currentIndex: 0 };
-    this.parser = new Parser(raw, parseOption, { 'data-spyable-heading': true });
+
+    /* parser */
+    const { raw, parseOption, maxDepth } = this.props;
+    const headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
+    this.parser = new Parser({ raw, parseOption, headingAttributes });
+
+    /* handler */
     this.handleTocItemClick = this.handleTocItemClick.bind(this);
     this.handleWindowScroll = this.handleWindowScroll.bind(this);
   }
@@ -42,8 +48,9 @@ class SpyableMarkdownTocWrapper extends Component {
     window.addEventListener('scroll', this.handleWindowScroll);
   }
 
-  componentWillReceiveProps({ raw, parseOption, headingAttrs }) {
-    this.parser = new Parser(raw, parseOption, headingAttrs);
+  componentWillReceiveProps({ raw, parseOption, maxDepth }) {
+    const headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
+    this.parser = new Parser({ raw, parseOption, headingAttributes });
     this.setState({ currentIndex: 0 });
   }
 
@@ -56,7 +63,6 @@ class SpyableMarkdownTocWrapper extends Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleWindowScroll);
   }
-
 
   handleWindowScroll() {
     const baseTop = window.pageYOffset + 30;

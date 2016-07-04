@@ -8,14 +8,16 @@ class MDParser {
   /**
    * Creates an instance of MDParser.
    *
-   * @param {string} raw - markdown
-   * @param {?Object} parseOption - remark parse option
-   * @param {?Object} headingAttributes - for remark-html
+   * @param {string} args.raw - markdown
+   * @param {?Object} args.parseOption - remark parse option
+   * @param {?Object} args.headingAttributes - for remark-html
    */
-  constructor(raw, parseOption, headingAttributes) {
+  constructor(args) {
+    const { raw, parseOption, headingAttributes } = args;
     this.raw = raw;
     this.parseOption = parseOption || { breaks: true, setext: true };
-    this.headingAttributes = { attrs: headingAttributes };
+    this.maxDepth = headingAttributes && headingAttributes.max || 6;
+    this.headingAttributes = headingAttributes || {};
   }
 
   /**
@@ -34,7 +36,7 @@ class MDParser {
     const ast = remark().parse(this.raw, this.parseOption);
 
     for (const node of ast.children) {
-      if (node.type === 'heading') {
+      if (node.type === 'heading' && node.depth <= this.maxDepth) {
         headers.push({
           depth: node.depth,
           value: toString(node),

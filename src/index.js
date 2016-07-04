@@ -9,7 +9,7 @@ const SampleText = require('./../debug/SampleText.md');
 const App = function App() {
   return (
     <div className="App">
-      <Wrapper raw={SampleText}>
+      <Wrapper raw={SampleText} maxDepth={3}>
         <div className="section">
           <Preview />
         </div>

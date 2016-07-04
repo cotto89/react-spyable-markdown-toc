@@ -19,15 +19,18 @@ function patch(context, key, value) {
 }
 
 /**
- * This plugin can be used as `remark.use(plugin, {attrs: { id: "foo" }})`.
+ * This plugin can be used as `remark.use(plugin, {attributes: { id: "foo" }})`.
  *
- * @param {Object} options - attributes.
+ * @param {?Object} options - attributes.
  */
 function attacher(processor, options) {
-  const attrs = options.attrs || {};
+  const attrs = options && options.attributes || {};
+  const max = options && options.max || 6;
 
   function transformer(ast) {
     visit(ast, 'heading', node => {
+      if (node.depth > max) return;
+
       const data = patch(node, 'data', {});
       /* Legacy remark-html */
       patch(data, 'htmlAttributes', {});
