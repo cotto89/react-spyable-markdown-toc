@@ -13,10 +13,10 @@ const App = function App() {
   return (
     <div className="App">
       <SpyableMarkdownTocWrapper raw={SampleText}>
-        <div className="section">
+        <div className="SpyableMarkdowWrapper section">
           <SpyableMarkdownPreview />
         </div>
-        <div className="section">
+        <div className="SpyableTocWrapper section">
           <SpyableToc />
         </div>
       </SpyableMarkdownTocWrapper>
