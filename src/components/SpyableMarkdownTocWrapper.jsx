@@ -1,6 +1,5 @@
-const React = require('react');
-const { Component, PropTypes } = React;
-const Parser = require('./../lib/md-parser.js');
+import React, { Component, PropTypes } from 'react';
+import Parser from './../lib/md-parser.js';
 
 class SpyableMarkdownTocWrapper extends Component {
   static get propTypes() {
@@ -103,4 +102,4 @@ class SpyableMarkdownTocWrapper extends Component {
   }
 }
 
-module.exports = SpyableMarkdownTocWrapper;
+export default SpyableMarkdownTocWrapper;
