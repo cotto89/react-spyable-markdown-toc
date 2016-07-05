@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import SpyableTocItem from './SpyableTocItem.jsx';
+import SpyableTocItem from './SpyableTocItem.js';
 
 export default function SpyableToc(props, context) {
   const { currentIndex, onTocItemClick } = context;
