@@ -65,7 +65,7 @@ var TocItem = function (_React$Component) {
 
       var cname = (0, _classnames2.default)((_classNames = {
         SpyableTocItem: true
-      }, (0, _defineProperty3.default)(_classNames, 'SpyableTocItem__depth-' + depth, true), (0, _defineProperty3.default)(_classNames, 'SpyableTocItem--current', current), _classNames));
+      }, (0, _defineProperty3.default)(_classNames, 'SpyableTocItem__h' + depth, true), (0, _defineProperty3.default)(_classNames, 'SpyableTocItem--current', current), _classNames));
 
       return _react2.default.createElement(
         'div',
