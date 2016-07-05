@@ -16,7 +16,7 @@ const prodConf = {
       inject: 'body',
       hash: true,
       template: './template.html',
-      title: 'sample',
+      title: 'example reack-spyable-markdown-toc',
     }),
     new webpack.DefinePlugin({
       'process.env': {

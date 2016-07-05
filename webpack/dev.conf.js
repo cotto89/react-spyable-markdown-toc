@@ -5,7 +5,7 @@ const common = require('./common.js');
 const devConf = {
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: 'dist/',
+    contentBase: 'example/dist',
     inline: true,
     noInfo: true,
   },
