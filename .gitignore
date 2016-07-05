@@ -48,6 +48,4 @@ typings
 typings.json
 
 ### Project ####
-dist
-debug
-Raw
+example/dist
