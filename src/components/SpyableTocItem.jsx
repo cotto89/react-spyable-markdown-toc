@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+const React = require('react');
+const { PropTypes } = React;
+const classNames = require('classnames');
 
-export default class TocItem extends React.Component {
+module.exports = class TocItem extends React.Component {
   static get propTypes() {
     return {
       value: PropTypes.string.isRequired,

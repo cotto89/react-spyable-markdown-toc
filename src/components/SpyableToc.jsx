@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
-import SpyableTocItem from './SpyableTocItem.jsx';
+const React = require('react');
+const { PropTypes } = React;
+const SpyableTocItem = require('./SpyableTocItem.jsx');
 
-export default function SpyableToc(props, context) {
+function SpyableToc(props, context) {
   const { currentIndex, onTocItemClick } = context;
   return (
     <div className="SpyableToc">
@@ -23,3 +24,5 @@ SpyableToc.contextTypes = {
   onTocItemClick: PropTypes.func.isRequired,
   currentIndex: PropTypes.number,
 };
+
+module.exports = SpyableToc;
