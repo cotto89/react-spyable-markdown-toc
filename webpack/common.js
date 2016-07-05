@@ -4,9 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const PATHS = {
-  src: path.join(__dirname, '../', 'src'),
-  dist: path.join(__dirname, '../', 'dist'),
-  publicPath: '/dist/',
+  src: path.join(__dirname, '../', 'example'),
+  dist: path.join(__dirname, '../', 'example/dist'),
+  publicPath: '/example/dist/',
 };
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
   output: {
     path: PATHS.dist,
     publicPath: PATHS.publicPath,
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
@@ -44,7 +44,7 @@ module.exports = {
   },
   postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
   plugins: [
-    new WebpackNotifierPlugin({ title: 'Webpack' }),
+    new WebpackNotifierPlugin({ title: 'example' }),
     new ExtractTextPlugin('bundle.css'),
   ],
 };

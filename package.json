@@ -16,7 +16,7 @@
     "watch": "webpack --watch --config ./webpack/dev.conf.js",
     "server": "lite-server --verbose",
     "test": "karma start",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./example/dist"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
