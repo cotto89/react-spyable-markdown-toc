@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _SpyableMarkdownPreview = require('./components/SpyableMarkdownPreview.js');
 
 var _SpyableMarkdownPreview2 = _interopRequireDefault(_SpyableMarkdownPreview);
@@ -18,7 +14,7 @@ var _SpyableToc2 = _interopRequireDefault(_SpyableToc);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
+module.exports = {
   SpyableMarkdownPreview: _SpyableMarkdownPreview2.default,
   SpyableMarkdownTocWrapper: _SpyableMarkdownTocWrapper2.default,
   SpyableToc: _SpyableToc2.default
