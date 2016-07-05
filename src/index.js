@@ -1,8 +1,8 @@
-const SpyableMarkdownPreview = require('./components/SpyableMarkdownPreview.jsx').default;
-const SpyableMarkdownTocWrapper = require('./components/SpyableMarkdownTocWrapper.jsx').default;
-const SpyableToc = require('./components/SpyableToc.jsx').default;
+import SpyableMarkdownPreview from './components/SpyableMarkdownPreview.js';
+import SpyableMarkdownTocWrapper from './components/SpyableMarkdownTocWrapper.js';
+import SpyableToc from './components/SpyableToc.js';
 
-module.exports = {
+export default {
   SpyableMarkdownPreview,
   SpyableMarkdownTocWrapper,
   SpyableToc,
