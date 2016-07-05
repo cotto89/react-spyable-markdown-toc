@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+const React = require('react');
+const { PropTypes } = React;
 
-export default function SpyableMarkdownPreview(props, context) {
+function SpyableMarkdownPreview(props, context) {
   return (
     <div
       className="SpyableMarkdownPreview"
@@ -12,3 +13,5 @@ export default function SpyableMarkdownPreview(props, context) {
 SpyableMarkdownPreview.contextTypes = {
   html: PropTypes.string,
 };
+
+module.exports = SpyableMarkdownPreview;
