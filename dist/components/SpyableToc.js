@@ -14,7 +14,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SpyableTocItem = require('./SpyableTocItem.jsx');
+var _SpyableTocItem = require('./SpyableTocItem.js');
 
 var _SpyableTocItem2 = _interopRequireDefault(_SpyableTocItem);
 
