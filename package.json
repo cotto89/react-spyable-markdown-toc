@@ -1,7 +1,14 @@
 {
-  "name": "playground_react",
-  "version": "1.0.0",
-  "description": "playground_react",
+  "name": "react-spyable-markdown-toc",
+  "description": "react-spyable-markdown-toc",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cotto89/react-spyable-markdown-toc/",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cotto89/react-spyable-markdown-toc.git"
+  },
   "scripts": {
     "start": "npm run build && webpack-dev-server --config ./webpack/dev.conf.js",
     "build": "webpack --config ./webpack/dev.conf.js",
@@ -47,6 +54,8 @@
     "postcss-loader": "^0.9.1",
     "power-assert": "^1.4.1",
     "raw-loader": "^0.5.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "rimraf": "^2.5.3",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.0",
@@ -57,10 +66,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "lodash": "^4.13.1",
     "mdast-util-to-string": "^1.0.2",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
     "remark": "^5.0.1",
     "remark-highlight.js": "^3.1.1",
     "remark-html": "^4.0.0",
