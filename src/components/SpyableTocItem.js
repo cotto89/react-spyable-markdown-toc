@@ -20,7 +20,7 @@ export default class TocItem extends React.Component {
     const { value, depth, index, current, onTocItemClick } = this.props;
     const cname = classNames({
       SpyableTocItem: true,
-      [`SpyableTocItem__depth-${depth}`]: true,
+      [`SpyableTocItem__h${depth}`]: true,
       'SpyableTocItem--current': current,
     });
 

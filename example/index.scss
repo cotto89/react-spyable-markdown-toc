@@ -1,44 +1,77 @@
+div {
+  box-sizing: border-box;
+}
+
+.App {
+  margin: 0 auto;
+  padding: 10px;
+  width: 800px;
+}
+
+.section + .section {
+  margin-left: 30px;
+}
+
+[data-spyable-heading=true] {
+  color: #00bfff;
+}
+
+[data-spyable-heading=true]:not(:first-child) {
+  margin-top: 60px;
+}
+
 .SpyableMarkdownTocWrapper {
   display: flex;
+
+  justify-content: space-around;
 }
 
 .SpyableMarkdownPreview {
-  max-width: 50vw;
+  width: 500px;
+}
+
+.SpyableTocWrapper {
+  flex-grow: 1;
 }
 
 .SpyableToc {
   position: fixed;
+  margin-top: 20px;
 }
 
 .SpyableTocItem {
-  box-sizing: border-box;
-  padding: 10px;
-  min-width: 0;
-  max-width: 100px;
+  margin: 5px 0;
+  padding: 3px 5px;
+  width: auto;
   cursor: pointer;
-
   &:hover {
-    color: deepskyblue;
+    color: #00bfff;
   }
 }
 
-.SpyableTocItem__depth-2 {
+.SpyableTocItem__h1 {
+}
+
+.SpyableTocItem__h2 {
+  margin-left: 10px;
+}
+
+.SpyableTocItem__h3 {
   margin-left: 20px;
 }
-.SpyableTocItem__depth-3 {
+
+.SpyableTocItem__h4 {
+  margin-left: 30px;
+}
+
+.SpyableTocItem__h5 {
   margin-left: 40px;
 }
-.SpyableTocItem__depth-4 {
-  margin-left: 80px;
-}
-.SpyableTocItem__depth-5 {
-  margin-left: 100px;
-}
-.SpyableTocItem__depth-6 {
-  margin-left: 120px;
+
+.SpyableTocItem__h6 {
+  margin-left: 50px;
 }
 
 .SpyableTocItem--current {
-  background: #ccc;
-  color: #fff;
+  border-left: 2px solid #00bfff;
 }
