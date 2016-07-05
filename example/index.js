@@ -7,7 +7,7 @@ import {
   SpyableToc,
 } from './../src/index.js';
 
-const SampleText = require('./../debug/SampleText.md');
+const SampleText = require('./sample.md');
 
 const App = function App() {
   return (
