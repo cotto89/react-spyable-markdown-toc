@@ -98,7 +98,7 @@ $ npm i -S https://github.com/cotto89/react-spyable-markdown-toc
 # TODO
 
 - [ ] Component Test
-- [ ] npm publishPreview
+- [ ] npm publish
 
 # License
 
