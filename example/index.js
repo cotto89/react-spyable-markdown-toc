@@ -12,7 +12,7 @@ const SampleText = require('./sample.md');
 const App = function App() {
   return (
     <div className="App">
-      <SpyableMarkdownTocWrapper raw={SampleText}>
+      <SpyableMarkdownTocWrapper raw={SampleText} maxDepth={1}>
         <div className="SpyableMarkdowWrapper section">
           <SpyableMarkdownPreview />
         </div>

@@ -1,70 +1,101 @@
-# heading 1
+# Demo
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+https://cotto89.github.io/react-spyable-markdown-toc/
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+# Usage
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+```js
+import React from 'react';
+import {
+  SpyableMarkdownTocWrapper,
+  SpyableMarkdownPreview,
+  SpyableToc,
+} from 'react-spyable-markdown-toc';
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+const SampleText = require('./sample.md');
 
-
-## heading 2
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-### heading 3
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
-
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+const App = function App() {
+  return (
+    <div className="App">
+      <SpyableMarkdownTocWrapper raw={SampleText} maxDepth={1}>
+        <SpyableMarkdownPreview />
+        <SpyableToc />
+      </SpyableMarkdownTocWrapper>
+    </div>
+  );
+};
+```
 
 
-#### heading 4
+# ComponentSpec
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+## SpyableMarkdownTocWrapper
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+This Component parse Markdown to HTML, handle events and pass data by React context API to `SpyableMarkdownPreview` and `SpyableToc`.
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+Parsed HTML is sanitized. And applied `highlight.js` by [remark-highlight.js](https://github.com/ben-eb/remark-highlight.js). So you can use highlight.js theme for syntax hightlight of CodeBlock.
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+[highlight.js demo](https://highlightjs.org/static/demo/)
 
-##### heading 5
+### props
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+| Name | Type | Default | Description |
+|------ | --- | ------- | ------------ |
+| raw | string |        | required |
+| parseOption | object | `{ breaks: true, setext: true }`  | see [remark parse option](https://github.com/wooorm/remark/blob/master/packages/remark-stringify/readme.md#options) |
+| maxDepth | number | 6 | target of heading depth for toc |
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+## SpyableMarkdownPreview
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+This Component render Markdown as HTML.
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+## SpyableToc
 
-###### heading 6
+This Component render TOC. TOC item is spyable to heading on scroll event.
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+# className for css
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+```css
+/* target heading */
+[data-spyable-heading=true]{}
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+.SpyableMarkdownTocWrapper {}
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+.SpyableMarkdownPreview {}
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+.SpyableToc {}
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+.SpyableTocItem {}
 
-Minim sint minim irure sint veniam officia cillum duis ea aute ipsum id. Esse nisi sunt est fugiat culpa. Sunt Lorem esse elit sunt voluptate ex velit. Laborum esse aute veniam consectetur ut elit dolor enim incididunt duis nulla. Consequat id nisi laborum mollit reprehenderit consequat commodo pariatur officia dolore dolore proident fugiat et. Officia culpa elit voluptate amet ipsum ex eu.
+.SpyableTocItem__h1 {}
+.SpyableTocItem__h2 {}
+.SpyableTocItem__h3 {}
+.SpyableTocItem__h4 {}
+.SpyableTocItem__h5 {}
+.SpyableTocItem__h6 {}
 
+.SpyableTocItem--current {}
+```
+
+# Dependencies
+
+* [wooorm/remark](https://github.com/wooorm/remark)
+* [wooorm/remark-html](https://github.com/wooorm/remark-html)
+* [ben-eb/remark-highlight.js](https://github.com/ben-eb/remark-highlight.js)
+* [wooorm/unist-util-visit](https://github.com/wooorm/unist-util-visit)
+* [wooorm/mdast-util-to-string](https://github.com/wooorm/mdast-util-to-string)
+* [JedWatson/classnames](https://github.com/JedWatson/classnames)
+
+and also depend on React context API. **It is unstable API. see [Context | React](https://facebook.github.io/react/docs/context.html)**.
+
+# Install
+
+```bash
+$ npm i -S https://github.com/cotto89/react-spyable-markdown-toc
+```
+
+# TODO
+
+- [ ] Component Test
+- [ ] npm publish
