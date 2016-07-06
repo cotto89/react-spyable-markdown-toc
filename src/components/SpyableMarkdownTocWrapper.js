@@ -11,12 +11,14 @@ class SpyableMarkdownTocWrapper extends Component {
     };
   }
 
+  // 衝突しないようにprefixをつけてる
   static get childContextTypes() {
     return {
-      html: PropTypes.string,
-      headingList: PropTypes.array,
-      onTocItemClick: PropTypes.func,
-      currentIndex: PropTypes.number,
+      SMT_html: PropTypes.string,
+      SMT_headingList: PropTypes.array,
+      SMT_onTocItemClick: PropTypes.func,
+      SMT_currentIndex: PropTypes.number,
+      SMT_raw: PropTypes.string,
     };
   }
 
@@ -37,10 +39,11 @@ class SpyableMarkdownTocWrapper extends Component {
   ----------------------------------- */
   getChildContext() {
     return {
-      html: this.parsedHtml,
-      headingList: this.headingList,
-      currentIndex: this.state.currentIndex,
-      onTocItemClick: this.handleTocItemClick,
+      SMT_html: this.parsedHtml,
+      SMT_headingList: this.headingList,
+      SMT_currentIndex: this.state.currentIndex,
+      SMT_onTocItemClick: this.handleTocItemClick,
+      SMT_raw: this.props.raw,
     };
   }
 
