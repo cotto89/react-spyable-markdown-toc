@@ -37,8 +37,8 @@ class SpyableMarkdownTocWrapper extends Component {
   ----------------------------------- */
   getChildContext() {
     return {
-      html: this.parser.toHTML(),
-      headingList: this.parser.headingList,
+      html: this.parsedHtml,
+      headingList: this.headingList,
       currentIndex: this.state.currentIndex,
       onTocItemClick: this.handleTocItemClick,
     };
@@ -71,6 +71,8 @@ class SpyableMarkdownTocWrapper extends Component {
   initParser({ raw, parseOption, maxDepth }) {
     const headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
     this.parser = new Parser({ raw, parseOption, headingAttributes });
+    this.parsedHtml = this.parser.toHTML();
+    this.headingList = this.parser.headingList;
   }
 
   /* handler
