@@ -87,8 +87,8 @@ var SpyableMarkdownTocWrapper = function (_Component) {
     key: 'getChildContext',
     value: function getChildContext() {
       return {
-        html: this.parser.toHTML(),
-        headingList: this.parser.headingList,
+        html: this.parsedHtml,
+        headingList: this.headingList,
         currentIndex: this.state.currentIndex,
         onTocItemClick: this.handleTocItemClick
       };
@@ -138,6 +138,8 @@ var SpyableMarkdownTocWrapper = function (_Component) {
 
       var headingAttributes = { attributes: { 'data-spyable-heading': true }, max: maxDepth };
       this.parser = new _mdParser2.default({ raw: raw, parseOption: parseOption, headingAttributes: headingAttributes });
+      this.parsedHtml = this.parser.toHTML();
+      this.headingList = this.parser.headingList;
     }
 
     /* handler
