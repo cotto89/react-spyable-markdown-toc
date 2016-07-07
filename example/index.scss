@@ -1,0 +1,117 @@
+body {
+  color: #4e4e4e;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e1e1e1;
+  text-align: left;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+ul {
+  list-style: circle inside;
+}
+
+ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+ul ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+code {
+  padding: 3px;
+  border-radius: 3px;
+  background: #F4ECEC;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.App {
+  margin: 0 auto;
+  padding: 10px;
+  width: 800px;
+}
+
+.section + .section {
+  margin-left: 30px;
+}
+
+[data-spyable-heading=true]:not(:first-child) {
+  margin-top: 60px;
+}
+
+.SpyableMarkdownTocWrapper {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.SpyableMarkdownPreview {
+  width: 500px;
+}
+
+.SpyableTocWrapper {
+  flex-grow: 1;
+}
+
+.SpyableToc {
+  position: fixed;
+  margin-top: 20px;
+}
+
+.SpyableTocItem {
+  margin: 5px 0;
+  padding: 3px 5px;
+  width: auto;
+  cursor: pointer;
+  &:hover {
+    color: #00bfff;
+  }
+}
+
+.SpyableTocItem__h1 {
+}
+
+.SpyableTocItem__h2 {
+  margin-left: 10px;
+}
+
+.SpyableTocItem__h3 {
+  margin-left: 20px;
+}
+
+.SpyableTocItem__h4 {
+  margin-left: 30px;
+}
+
+.SpyableTocItem__h5 {
+  margin-left: 40px;
+}
+
+.SpyableTocItem__h6 {
+  margin-left: 50px;
+}
+
+.SpyableTocItem--current {
+  border-left: 2px solid #00bfff;
+}
