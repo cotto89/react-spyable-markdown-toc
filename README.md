@@ -13,13 +13,12 @@ import {
 } from 'react-spyable-markdown-toc';
 
 const SampleText = require('./sample.md');
-
 const App = function App() {
   return (
     <div className="App">
-      <SpyableMarkdownTocWrapper raw={SampleText} maxDepth={1}>
-        <SpyableMarkdownPreview />
-        <SpyableToc />
+      <SpyableMarkdownTocWrapper raw={SampleText} maxDepth={2}>
+          <SpyableMarkdownPreview />
+          <SpyableToc collapse />
       </SpyableMarkdownTocWrapper>
     </div>
   );
@@ -33,7 +32,7 @@ const App = function App() {
 
 This Component parse Markdown to HTML, handle events and pass data to `SpyableMarkdownPreview` and `SpyableToc` by React context API.
 
-Parsed HTML is sanitized. And applied `highlight.js` by [remark-highlight.js](https://github.com/ben-eb/remark-highlight.js). So you can use highlight.js theme for syntax hightlight of CodeBlock.
+Parsed HTML is sanitized and applied `highlight.js` by [remark-highlight.js](https://github.com/ben-eb/remark-highlight.js). So you can use highlight.js theme for syntax hightlight of CodeBlock.
 
 [highlight.js demo](https://highlightjs.org/static/demo/)
 
@@ -52,6 +51,12 @@ This Component render Markdown as HTML.
 ## SpyableToc
 
 This Component render TOC. TOC item is spyable to heading on scroll event.
+
+### props
+
+| Name | Type | Default | Description |
+|------ | --- | ------- | ------------ |
+| collapse | bool | false  | Deep TocItem is collapse when true |
 
 
 # className for css
