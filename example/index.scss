@@ -38,7 +38,13 @@ li {
   margin-bottom: 1rem;
 }
 
-
+code {
+  padding: 3px;
+  border-radius: 3px;
+  background: #F4ECEC;
+  font-weight: inherit;
+  font-size: inherit;
+}
 
 .App {
   margin: 0 auto;
