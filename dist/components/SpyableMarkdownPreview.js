@@ -14,10 +14,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function SpyableMarkdownPreview(props, context) {
   return _react2.default.createElement("div", {
     className: "SpyableMarkdownPreview",
-    dangerouslySetInnerHTML: { __html: context.html }
+    dangerouslySetInnerHTML: { __html: context.SMT_html }
   });
 }
 
 SpyableMarkdownPreview.contextTypes = {
-  html: _react.PropTypes.string
+  SMT_html: _react.PropTypes.string
 };

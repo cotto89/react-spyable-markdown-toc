@@ -46,14 +46,18 @@ var SpyableMarkdownTocWrapper = function (_Component) {
         maxDepth: _react.PropTypes.number
       };
     }
+
+    // 衝突しないようにprefixをつけてる
+
   }, {
     key: 'childContextTypes',
     get: function get() {
       return {
-        html: _react.PropTypes.string,
-        headingList: _react.PropTypes.array,
-        onTocItemClick: _react.PropTypes.func,
-        currentIndex: _react.PropTypes.number
+        SMT_html: _react.PropTypes.string,
+        SMT_headingList: _react.PropTypes.array,
+        SMT_onTocItemClick: _react.PropTypes.func,
+        SMT_currentIndex: _react.PropTypes.number,
+        SMT_raw: _react.PropTypes.string
       };
     }
   }]);
@@ -87,10 +91,11 @@ var SpyableMarkdownTocWrapper = function (_Component) {
     key: 'getChildContext',
     value: function getChildContext() {
       return {
-        html: this.parsedHtml,
-        headingList: this.headingList,
-        currentIndex: this.state.currentIndex,
-        onTocItemClick: this.handleTocItemClick
+        SMT_html: this.parsedHtml,
+        SMT_headingList: this.headingList,
+        SMT_currentIndex: this.state.currentIndex,
+        SMT_onTocItemClick: this.handleTocItemClick,
+        SMT_raw: this.props.raw
       };
     }
 
