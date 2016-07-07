@@ -9,6 +9,7 @@ export default class TocItem extends React.Component {
       index: PropTypes.number.isRequired,
       current: PropTypes.bool.isRequired,
       onTocItemClick: PropTypes.func.isRequired,
+      hidden: PropTypes.bool,
     };
   }
 
@@ -17,7 +18,8 @@ export default class TocItem extends React.Component {
   }
 
   render() {
-    const { value, depth, index, current, onTocItemClick } = this.props;
+    const { value, depth, index, current, onTocItemClick, hidden } = this.props;
+    const display = hidden ? 'none' : 'block';
     const cname = classNames({
       SpyableTocItem: true,
       [`SpyableTocItem__h${depth}`]: true,
@@ -25,7 +27,11 @@ export default class TocItem extends React.Component {
     });
 
     return (
-      <div className={cname} onClick={ev => onTocItemClick(index, ev)}>
+      <div
+        className={cname}
+        style={{ display }}
+        onClick={ev => onTocItemClick(index, ev) }
+      >
         {value}
       </div>
     );

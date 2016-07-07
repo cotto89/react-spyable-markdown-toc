@@ -62,16 +62,22 @@ var TocItem = function (_React$Component) {
       var index = _props.index;
       var current = _props.current;
       var onTocItemClick = _props.onTocItemClick;
+      var hidden = _props.hidden;
 
+      var display = hidden ? 'none' : 'block';
       var cname = (0, _classnames2.default)((_classNames = {
         SpyableTocItem: true
       }, (0, _defineProperty3.default)(_classNames, 'SpyableTocItem__h' + depth, true), (0, _defineProperty3.default)(_classNames, 'SpyableTocItem--current', current), _classNames));
 
       return _react2.default.createElement(
         'div',
-        { className: cname, onClick: function onClick(ev) {
+        {
+          className: cname,
+          style: { display: display },
+          onClick: function onClick(ev) {
             return onTocItemClick(index, ev);
-          } },
+          }
+        },
         value
       );
     }
@@ -83,7 +89,8 @@ var TocItem = function (_React$Component) {
         depth: _react.PropTypes.number.isRequired,
         index: _react.PropTypes.number.isRequired,
         current: _react.PropTypes.bool.isRequired,
-        onTocItemClick: _react.PropTypes.func.isRequired
+        onTocItemClick: _react.PropTypes.func.isRequired,
+        hidden: _react.PropTypes.bool
       };
     }
   }]);

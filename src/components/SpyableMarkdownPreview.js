@@ -4,11 +4,11 @@ export default function SpyableMarkdownPreview(props, context) {
   return (
     <div
       className="SpyableMarkdownPreview"
-      dangerouslySetInnerHTML={{ __html: context.html }}
+      dangerouslySetInnerHTML={{ __html: context.SMT_html }}
     />
   );
 }
 
 SpyableMarkdownPreview.contextTypes = {
-  html: PropTypes.string,
+  SMT_html: PropTypes.string,
 };

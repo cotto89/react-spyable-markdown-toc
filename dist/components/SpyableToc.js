@@ -18,28 +18,40 @@ var _SpyableTocItem = require('./SpyableTocItem.js');
 
 var _SpyableTocItem2 = _interopRequireDefault(_SpyableTocItem);
 
+var _shouldHidden = require('./../lib/shouldHidden.js');
+
+var _shouldHidden2 = _interopRequireDefault(_shouldHidden);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SpyableToc(props, context) {
-  var currentIndex = context.currentIndex;
-  var onTocItemClick = context.onTocItemClick;
+  var SMT_headingList = context.SMT_headingList;
+  var SMT_currentIndex = context.SMT_currentIndex;
+  var SMT_onTocItemClick = context.SMT_onTocItemClick;
+  var collapse = props.collapse;
 
   return _react2.default.createElement(
     'div',
     { className: 'SpyableToc' },
-    context.headingList.map(function (x, i) {
+    SMT_headingList.map(function (x, i) {
       return _react2.default.createElement(_SpyableTocItem2.default, (0, _extends3.default)({
         key: i,
         index: i,
-        current: currentIndex === i,
-        onTocItemClick: onTocItemClick
+        current: SMT_currentIndex === i,
+        onTocItemClick: SMT_onTocItemClick,
+        hidden: collapse && (0, _shouldHidden2.default)(x, i, SMT_currentIndex, SMT_headingList)
       }, x));
     })
   );
-}
+} /* eslint-disable camelcase*/
+
+
+SpyableToc.propTypes = {
+  collapse: _react.PropTypes.bool
+};
 
 SpyableToc.contextTypes = {
-  headingList: _react.PropTypes.array.isRequired,
-  onTocItemClick: _react.PropTypes.func.isRequired,
-  currentIndex: _react.PropTypes.number
+  SMT_headingList: _react.PropTypes.array.isRequired,
+  SMT_onTocItemClick: _react.PropTypes.func.isRequired,
+  SMT_currentIndex: _react.PropTypes.number
 };
