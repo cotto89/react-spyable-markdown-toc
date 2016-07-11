@@ -56,7 +56,7 @@ This Component render TOC. TOC item is spyable to heading on scroll event.
 
 | Name | Type | Default | Description |
 |------ | --- | ------- | ------------ |
-| collapse | bool | false  | Deep TocItem is collapse when true |
+| collapse | bool | false  | collapse deep toc item  |
 
 
 # className for css
@@ -102,7 +102,7 @@ $ npm i -S https://github.com/cotto89/react-spyable-markdown-toc
 
 # TODO
 
-- [ ] Component Test
+- [ ] component test
 - [ ] npm publish
 
 # License
